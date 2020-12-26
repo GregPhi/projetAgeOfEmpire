@@ -1,3 +1,23 @@
 <resources>
-    <string name="app_name">AgeOfEmpire2_Appli</string>
+    <!-- APP -->
+    <string name="app_name">Age of Empires 2</string>
+
+    <!-- COST -->
+    <string name="cost_food">Cost food</string>
+    <string name="cost_gold">Cost gold</string>
+    <string name="cost_stone">Cost stone</string>
+    <string name="cost_wood">Cost wood</string>
+
+    <!-- CIVILIZATION -->
+    <string name="civilization_name">Civilization name</string>
+    <string name="civilization_age">Civilization age</string>
+    <string name="civilization_bonus">Civilization bonus</string>
+
+
+    <!-- FRAGMENT RETRIEVE INFORMATIONS -->
+    <string name="civilizations">Civilizations</string>
+    <string name="all_civilizations">All civilizations</string>
+
+    <!-- SEARCH QUERY HINT -->
+    <string name="id_or_name_of_the_civilization_to_retrieve">id : 1 to 32 OR english name</string>
 </resources>
