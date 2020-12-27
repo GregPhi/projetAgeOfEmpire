@@ -10,7 +10,7 @@
 
     <!-- CIVILIZATION -->
     <string name="civilization_name">Civilization name</string>
-    <string name="civilization_age">Civilization age</string>
+    <string name="civilization_expansion">Civilization expansion</string>
     <string name="civilization_bonus">Civilization bonus</string>
 
 
@@ -20,4 +20,14 @@
 
     <!-- SEARCH QUERY HINT -->
     <string name="id_or_name_of_the_civilization_to_retrieve">id : 1 to 32 OR english name</string>
+    <string name="civilization_crest">Civilization crest</string>
+    <string name="name">Name :</string>
+    <string name="civilization">Civilization</string>
+    <string name="expansion">Expansion :</string>
+    <string name="army_type">Army type :</string>
+    <string name="unique_unit">Unique unit :</string>
+    <string name="team_bonus">Team bonus :</string>
+    <string name="civilization_bonus_">Civilization bonus :</string>
+    <string name="back">Back</string>
+    <string name="unique_technologie">Unique technologie :</string>
 </resources>
