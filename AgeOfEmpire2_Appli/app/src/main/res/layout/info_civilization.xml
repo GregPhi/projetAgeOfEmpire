@@ -18,7 +18,8 @@
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_blason" />
+        app:srcCompat="@drawable/ic_blason"
+        android:contentDescription="@string/civilization_crest"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -44,13 +45,14 @@
                 android:id="@+id/text1"
                 android:layout_width="151dp"
                 android:layout_height="65dp"
-                android:text="Name : " />
+                android:text="@string/name"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/text_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Civilization" />
+                android:text="@string/civilization" />
         </LinearLayout>
 
         <LinearLayout
@@ -62,13 +64,14 @@
                 android:id="@+id/text2"
                 android:layout_width="153dp"
                 android:layout_height="65dp"
-                android:text="Expansion : " />
+                android:text="@string/expansion"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/text_expansion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Civilization" />
+                android:text="@string/civilization" />
         </LinearLayout>
 
         <LinearLayout
@@ -80,13 +83,14 @@
                 android:id="@+id/text3"
                 android:layout_width="153dp"
                 android:layout_height="65dp"
-                android:text="Army type : " />
+                android:text="@string/army_type"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/text_armyType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Civilization" />
+                android:text="@string/civilization" />
         </LinearLayout>
 
         <LinearLayout
@@ -98,13 +102,14 @@
                 android:id="@+id/text4"
                 android:layout_width="153dp"
                 android:layout_height="65dp"
-                android:text="Unique unit : " />
+                android:text="@string/unique_unit"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/text_uniqueUnit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Civilization" />
+                android:text="@string/civilization" />
         </LinearLayout>
 
         <LinearLayout
@@ -116,13 +121,14 @@
                 android:id="@+id/text5"
                 android:layout_width="153dp"
                 android:layout_height="65dp"
-                android:text="Unique technologie : " />
+                android:text="@string/unique_technologie"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/text_uniqueTech"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Civilization" />
+                android:text="@string/civilization" />
         </LinearLayout>
 
         <LinearLayout
@@ -134,13 +140,14 @@
                 android:id="@+id/text6"
                 android:layout_width="153dp"
                 android:layout_height="65dp"
-                android:text="Team bonus : " />
+                android:text="@string/team_bonus"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/text_teamBonus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Civilization" />
+                android:text="@string/civilization" />
         </LinearLayout>
 
         <LinearLayout
@@ -152,13 +159,14 @@
                 android:id="@+id/text7"
                 android:layout_width="153dp"
                 android:layout_height="65dp"
-                android:text="Civilization bonus : " />
+                android:text="@string/civilization_bonus_"
+                android:textAlignment="center" />
 
             <TextView
                 android:id="@+id/text_civilizationBonus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Civilization" />
+                android:text="@string/civilization" />
         </LinearLayout>
 
     </LinearLayout>
@@ -167,7 +175,7 @@
         android:id="@+id/back_to_holdContext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/back"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
