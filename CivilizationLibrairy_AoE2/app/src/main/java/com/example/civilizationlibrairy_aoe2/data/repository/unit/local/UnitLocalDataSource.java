@@ -3,8 +3,6 @@ package com.example.civilizationlibrairy_aoe2.data.repository.unit.local;
 import com.example.civilizationlibrairy_aoe2.data.db.ProjectDatabase;
 import com.example.civilizationlibrairy_aoe2.data.entity.UnitEntity;
 
-import io.reactivex.Completable;
-
 public class UnitLocalDataSource {
     private final ProjectDatabase projectDatabase;
 
@@ -15,19 +13,17 @@ public class UnitLocalDataSource {
     /**
      * Add a <code>unitEntity</code> to the database (on the unit database)
      * @param unitEntity : a specific unit to add
-     * @return job completed (a UnitEntity was add)
      */
-    public Completable addUnitToDatabase(UnitEntity unitEntity){
-        return projectDatabase.unitDao().addUnitToDatabase(unitEntity);
+    public void addUnitToDatabase(UnitEntity unitEntity){
+        projectDatabase.unitDao().addUnitToDatabase(unitEntity);
     }
 
     /**
      * Remove a <code>unitEntity</code> to the database (on the unit database)
      * @param url_api : a specific unit to remove
-     * @return job completed (a UnitEntity was remove)
      */
-    public Completable deleteUnitToDatabaseWithId(String url_api){
-        return projectDatabase.unitDao().deleteUnitToDatabaseWithId(url_api);
+    public void deleteUnitToDatabaseWithId(String url_api){
+        projectDatabase.unitDao().deleteUnitToDatabaseWithId(url_api);
     }
 
     /**

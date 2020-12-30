@@ -3,7 +3,6 @@ package com.example.civilizationlibrairy_aoe2.data.api.service;
 
 import com.example.civilizationlibrairy_aoe2.data.api.list.CivilizationsList;
 import com.example.civilizationlibrairy_aoe2.data.api.object.Civilization;
-import com.example.civilizationlibrairy_aoe2.data.api.object.Technology;
 import com.example.civilizationlibrairy_aoe2.data.api.object.Unit;
 
 import io.reactivex.Single;
@@ -28,7 +27,4 @@ public interface AoE2Service {
 
     @GET("unit/{id}")
     Single<Unit> searchAnUnit(@Path("id") String id);
-
-    @GET("technologie/{id}")
-    Single<Technology> searchATechnology(@Path("id") String id);
 }

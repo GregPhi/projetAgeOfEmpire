@@ -9,7 +9,6 @@ import com.example.civilizationlibrairy_aoe2.data.repository.unit.remote.UnitRem
 
 import java.util.concurrent.ExecutionException;
 
-import io.reactivex.Completable;
 import io.reactivex.Single;
 
 public class UnitRepository {
@@ -32,10 +31,9 @@ public class UnitRepository {
     /**
      * Remove a <code>unitEntity</code> to the database (on the unit database)
      * @param url_api : a specific unit to remove
-     * @return : job completed (a UnitEntity was remove)
      */
-    public Completable deleteUnitToDatabaseWithId(String url_api){
-        return unitLocalDataSource.deleteUnitToDatabaseWithId(url_api);
+    public void deleteUnitToDatabaseWithId(String url_api){
+        unitLocalDataSource.deleteUnitToDatabaseWithId(url_api);
     }
 
     /**

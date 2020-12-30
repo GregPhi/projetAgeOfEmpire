@@ -7,11 +7,7 @@ import com.example.civilizationlibrairy_aoe2.data.api.service.AoE2Service;
 import com.example.civilizationlibrairy_aoe2.data.db.ProjectDatabase;
 import com.example.civilizationlibrairy_aoe2.data.repository.civilization.CivilizationRepository;
 import com.example.civilizationlibrairy_aoe2.data.repository.civilization.local.CivilizationLocalDataSource;
-import com.example.civilizationlibrairy_aoe2.data.repository.civilization.mapper.CivilizationToCivilizationEntityMapper;
 import com.example.civilizationlibrairy_aoe2.data.repository.civilization.remote.CivilizationRemoteDataSource;
-import com.example.civilizationlibrairy_aoe2.data.repository.unit.UnitRepository;
-import com.example.civilizationlibrairy_aoe2.data.repository.unit.local.UnitLocalDataSource;
-import com.example.civilizationlibrairy_aoe2.data.repository.unit.remote.UnitRemoteDataSource;
 import com.example.civilizationlibrairy_aoe2.view.viewmodel.ViewModelFactory;
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.gson.Gson;
@@ -30,7 +26,6 @@ public class AoE2DecencyInjector {
     private static Retrofit retrofit;
     private static Gson gson;
     private static CivilizationRepository civilizationRepository;
-    private static UnitRepository unitRepository;
     private static ProjectDatabase projectDatabase;
     private static Context applyContext;
     private static ViewModelFactory viewModelFactory;
@@ -38,25 +33,16 @@ public class AoE2DecencyInjector {
     public static ViewModelFactory getViewModelFactory(){
         if(viewModelFactory == null){
             String[] urls_civilization = applyContext.getResources().getStringArray(R.array.url_civilization);
-            String[] urls_units = applyContext.getResources().getStringArray(R.array.url_unit);
-            viewModelFactory = new ViewModelFactory(getCivilizationRepository(), getUnitRepository(), Arrays.asList(urls_civilization), Arrays.asList(urls_units));
+            viewModelFactory = new ViewModelFactory(getCivilizationRepository(), Arrays.asList(urls_civilization));
         }
         return viewModelFactory;
     }
 
     public static CivilizationRepository getCivilizationRepository(){
         if(civilizationRepository == null){
-            String[] urls_civilization = applyContext.getResources().getStringArray(R.array.url_civilization);
-            civilizationRepository = new CivilizationRepository(new CivilizationLocalDataSource(getProjectDatabase()), new CivilizationRemoteDataSource(getAoE2Service()), new CivilizationToCivilizationEntityMapper(Arrays.asList(urls_civilization)));
+            civilizationRepository = new CivilizationRepository(new CivilizationLocalDataSource(getProjectDatabase()), new CivilizationRemoteDataSource(getAoE2Service()));
         }
         return civilizationRepository;
-    }
-
-    public static UnitRepository getUnitRepository(){
-        if(unitRepository == null){
-            unitRepository = new UnitRepository(new UnitLocalDataSource(getProjectDatabase()), new UnitRemoteDataSource(getAoE2Service()));
-        }
-        return unitRepository;
     }
 
     public static AoE2Service getAoE2Service(){

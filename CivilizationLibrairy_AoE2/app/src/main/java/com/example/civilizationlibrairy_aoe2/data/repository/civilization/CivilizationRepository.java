@@ -4,7 +4,6 @@ import com.example.civilizationlibrairy_aoe2.data.api.list.CivilizationsList;
 import com.example.civilizationlibrairy_aoe2.data.api.object.Civilization;
 import com.example.civilizationlibrairy_aoe2.data.entity.CivilizationEntity;
 import com.example.civilizationlibrairy_aoe2.data.repository.civilization.local.CivilizationLocalDataSource;
-import com.example.civilizationlibrairy_aoe2.data.repository.civilization.mapper.CivilizationToCivilizationEntityMapper;
 import com.example.civilizationlibrairy_aoe2.data.repository.civilization.remote.CivilizationRemoteDataSource;
 
 import java.util.List;
@@ -17,12 +16,10 @@ import io.reactivex.functions.BiFunction;
 public class CivilizationRepository{
     private final CivilizationLocalDataSource civilizationLocalDataSource;
     private final CivilizationRemoteDataSource civilizationRemoteDataSource;
-    private final CivilizationToCivilizationEntityMapper civilizationToCivilizationEntityMapper;
 
-    public CivilizationRepository(CivilizationLocalDataSource civilizationLocalDataSource, CivilizationRemoteDataSource civilizationRemoteDataSource, CivilizationToCivilizationEntityMapper civilizationToCivilizationEntityMapper) {
+    public CivilizationRepository(CivilizationLocalDataSource civilizationLocalDataSource, CivilizationRemoteDataSource civilizationRemoteDataSource) {
         this.civilizationLocalDataSource = civilizationLocalDataSource;
         this.civilizationRemoteDataSource = civilizationRemoteDataSource;
-        this.civilizationToCivilizationEntityMapper = civilizationToCivilizationEntityMapper;
     }
 
     /**
