@@ -38,7 +38,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="43dp"
             android:orientation="horizontal">
 
             <TextView
@@ -57,7 +57,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:orientation="horizontal">
 
             <TextView
@@ -76,7 +76,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="44dp"
             android:orientation="horizontal">
 
             <TextView
@@ -101,15 +101,16 @@
             <TextView
                 android:id="@+id/text4"
                 android:layout_width="153dp"
-                android:layout_height="65dp"
+                android:layout_height="wrap_content"
                 android:text="@string/unique_unit"
                 android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/text_uniqueUnit"
-                android:layout_width="wrap_content"
+            <include
+                layout="@layout/cardview_unique_unit"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/civilization" />
+                android:layout_weight="1" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -133,7 +134,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:orientation="horizontal">
 
             <TextView
