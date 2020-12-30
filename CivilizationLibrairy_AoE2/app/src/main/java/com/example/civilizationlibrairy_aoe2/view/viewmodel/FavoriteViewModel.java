@@ -1,15 +1,11 @@
 package com.example.civilizationlibrairy_aoe2.view.viewmodel;
 
-import com.example.civilizationlibrairy_aoe2.data.api.object.Unit;
 import com.example.civilizationlibrairy_aoe2.data.entity.CivilizationEntity;
-import com.example.civilizationlibrairy_aoe2.data.entity.UnitEntity;
 import com.example.civilizationlibrairy_aoe2.data.repository.civilization.CivilizationRepository;
-import com.example.civilizationlibrairy_aoe2.data.repository.unit.UnitRepository;
 import com.example.civilizationlibrairy_aoe2.view.civilization.favorite.adapter.CivilizationFavoriteItemViewModel;
 import com.example.civilizationlibrairy_aoe2.view.civilization.favorite.mapper.CivilizationEntityToCivilizationFavoriteItemView;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -22,13 +18,11 @@ import io.reactivex.subscribers.ResourceSubscriber;
 
 public class FavoriteViewModel extends ViewModel {
     private final CivilizationRepository civilizationRepository;
-    private final UnitRepository unitRepository;
     private final CivilizationEntityToCivilizationFavoriteItemView civilizationEntityToCivilizationFavoriteItemView;
     private final CompositeDisposable compositeDisposable;
 
-    public FavoriteViewModel(CivilizationRepository repo, UnitRepository unitRepository) {
+    public FavoriteViewModel(CivilizationRepository repo) {
         this.civilizationRepository = repo;
-        this.unitRepository = unitRepository;
         this.compositeDisposable = new CompositeDisposable();
         this.civilizationEntityToCivilizationFavoriteItemView = new CivilizationEntityToCivilizationFavoriteItemView();
     }
@@ -140,25 +134,5 @@ public class FavoriteViewModel extends ViewModel {
 
                     }
                 }));
-    }
-
-    /**
-     * Get unit on database
-     * @param url_api : url_api come from a civilization and use it to get a unit
-     * @return : a unit
-     * @throws ExecutionException
-     * @throws InterruptedException
-     */
-    public UnitEntity getAUnit(String url_api) throws ExecutionException, InterruptedException {
-        return unitRepository.getAUnit(url_api);
-    }
-
-    /**
-     * Search a unit on api
-     * @param url : unit's name to complete the GET
-     * @return : a unit
-     */
-    public Single<Unit> searchAnUnit(String url){
-        return unitRepository.searchAnUnit(url);
     }
 }
