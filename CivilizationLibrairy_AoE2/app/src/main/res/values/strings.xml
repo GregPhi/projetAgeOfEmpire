@@ -22,7 +22,7 @@
     <!-- INFORMATION -->
     <string name="name">Name :</string>
     <string name="civilization">Civilization</string>
-    <string name="expansion">Expansion :</string>
+    <string name="expansion">Expansion in game :</string>
     <string name="army_type">Army type :</string>
     <string name="unique_unit">Unique unit :</string>
     <string name="unique_technology">Unique technology :</string>
@@ -38,5 +38,6 @@
     <string name="info_of_civilization">Info of civilization</string>
     <string name="add_civilization_to_favorite">Add civilization to favorite</string>
     <string name="delete_civilization_to_favorite">Delete civilization to favorite</string>
+    <string name="image_of_unit">image of unit</string>
 
 </resources>
