@@ -109,7 +109,8 @@ public class CivilizationFavoriteAdapter extends RecyclerView.Adapter<Civilizati
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(img_civilization);
             civilization_name.setText(civilizationFavoriteItemViewModel.getCivilization_name());
-            civilization_expansion.setText(civilizationFavoriteItemViewModel.getCivilization_expansion());
+            String exp = "Expansion in game : "+civilizationFavoriteItemViewModel.getCivilization_expansion();
+            civilization_expansion.setText(exp);
             civilization_bonus.setText(civilizationFavoriteItemViewModel.getCivilization_bonus());
             setUpImageButton();
         }
