@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.InfoCivilizationActivity">
+
+    <ImageView
+        android:id="@+id/img_civ"
+        android:layout_width="119dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="193dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="195dp"
+        android:contentDescription="@string/image_of_civilization"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_blason" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="151dp"
+                android:layout_height="65dp"
+                android:text="@string/name"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/civilization" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="153dp"
+                android:layout_height="65dp"
+                android:text="@string/expansion"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_expansion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/civilization" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="153dp"
+                android:layout_height="65dp"
+                android:text="@string/army_type"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_armyType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/civilization" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="153dp"
+                android:layout_height="65dp"
+                android:text="@string/unique_unit"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_uniqueUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/civilization" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="153dp"
+                android:layout_height="65dp"
+                android:text="@string/unique_technology"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_uniqueTech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/civilization" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="153dp"
+                android:layout_height="65dp"
+                android:text="@string/team_bonus"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_teamBonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/civilization" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/text7"
+                android:layout_width="153dp"
+                android:layout_height="65dp"
+                android:text="@string/civilization_bonus_"
+                android:textAlignment="center" />
+
+            <TextView
+                android:id="@+id/text_civilizationBonus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/civilization" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/back_to_holdContext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.539" />
+</androidx.constraintlayout.widget.ConstraintLayout>

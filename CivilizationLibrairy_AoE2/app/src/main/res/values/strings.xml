@@ -1,0 +1,42 @@
+<resources>
+    <!-- APP -->
+    <string name="app_name">LibraryCivilizationAoE2</string>
+
+    <!-- COST -->
+    <string name="cost_food">Cost food</string>
+    <string name="cost_gold">Cost gold</string>
+    <string name="cost_stone">Cost stone</string>
+    <string name="cost_wood">Cost wood</string>
+
+    <!-- CIVILIZATION : cardview_list_civilization_layout_home -->
+    <string name="civilization_name">Civilization name</string>
+    <string name="civilization_expansion">Civilization expansion</string>
+    <string name="civilization_bonus">Civilization bonus</string>
+
+    <!-- SEARCH QUERY HINT -->
+    <!--<string name="id_or_name_of_the_civilization_to_retrieve">id : 1 to 32 OR english name</string>-->
+
+    <!-- ImageView -->
+    <string name="image_of_civilization">Image of civilization</string>
+
+    <!-- INFORMATION -->
+    <string name="name">Name :</string>
+    <string name="civilization">Civilization</string>
+    <string name="expansion">Expansion :</string>
+    <string name="army_type">Army type :</string>
+    <string name="unique_unit">Unique unit :</string>
+    <string name="unique_technology">Unique technology :</string>
+    <string name="team_bonus">Team bonus :</string>
+    <string name="civilization_bonus_">Civilization bonus :</string>
+    <string name="back">Back</string>
+
+    <!-- HOME -->
+    <string name="list">List</string>
+    <string name="grille">Grille</string>
+
+    <!-- BUTTON -->
+    <string name="info_of_civilization">Info of civilization</string>
+    <string name="add_civilization_to_favorite">Add civilization to favorite</string>
+    <string name="delete_civilization_to_favorite">Delete civilization to favorite</string>
+
+</resources>
