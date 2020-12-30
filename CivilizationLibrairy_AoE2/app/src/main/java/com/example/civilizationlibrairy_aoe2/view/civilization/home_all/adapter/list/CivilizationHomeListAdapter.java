@@ -121,7 +121,8 @@ public class CivilizationHomeListAdapter extends RecyclerView.Adapter<Civilizati
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(img_civilization);
             civilization_name.setText(civilizationListItemViewModel.getCivilization_name());
-            civilization_expansion.setText(civilizationListItemViewModel.getCivilization_expansion());
+            String exp = "Expansion in game : "+civilizationListItemViewModel.getCivilization_expansion();
+            civilization_expansion.setText(exp);
             civilization_bonus.setText(civilizationListItemViewModel.getCivilization_bonus());
             setUpImageButton();
         }

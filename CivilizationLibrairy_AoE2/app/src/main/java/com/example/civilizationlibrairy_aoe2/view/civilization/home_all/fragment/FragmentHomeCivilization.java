@@ -10,7 +10,6 @@ import android.widget.Switch;
 import com.example.civilizationlibrairy_aoe2.R;
 import com.example.civilizationlibrairy_aoe2.data.di.AoE2DecencyInjector;
 import com.example.civilizationlibrairy_aoe2.data.entity.CivilizationEntity;
-import com.example.civilizationlibrairy_aoe2.data.entity.UnitEntity;
 import com.example.civilizationlibrairy_aoe2.view.InfoCivilizationActivity;
 import com.example.civilizationlibrairy_aoe2.view.civilization.home_all.adapter.ActionOnHome;
 import com.example.civilizationlibrairy_aoe2.view.civilization.home_all.adapter.CivilizationHomeItemViewModel;
@@ -40,7 +39,6 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
     private boolean layoutManagerList;
     private CivilizationHomeListAdapter civilizationHomeListAdapter;
     private CivilizationHomeGrillAdapter civilizationHomeGrillAdapter;
-    private Switch switch_list_to_grille;
 
     public static FragmentHomeCivilization getInstance() {
         return new FragmentHomeCivilization();
@@ -66,7 +64,7 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
      * setup the switch list to grid and vice versa
      */
     public void setupSwitch_List_Grill(){
-        switch_list_to_grille =  rootView.findViewById(R.id.switch_list_to_grille);
+        Switch switch_list_to_grille = rootView.findViewById(R.id.switch_list_to_grille);
         switch_list_to_grille.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -144,10 +142,8 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
     public void displayInformation(CivilizationHomeItemViewModel item) throws ExecutionException, InterruptedException {
         CivilizationHomeItemViewModelToCivilizationEntity civilizationHomeItemViewModelToCivilizationEntity = new CivilizationHomeItemViewModelToCivilizationEntity();
         CivilizationEntity civilizationEntity = civilizationHomeItemViewModelToCivilizationEntity.map(item);
-        UnitEntity unitEntity = civilizationsViewModel.getAUnit(civilizationEntity.getArmy_type());
         Intent intent = new Intent(getActivity(), InfoCivilizationActivity.class);
         intent.putExtra("civilization",civilizationEntity);
-        intent.putExtra("unit",unitEntity);
         startActivity(intent);
     }
 }
