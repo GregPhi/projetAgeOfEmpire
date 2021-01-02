@@ -45,19 +45,6 @@ public class CivilizationRepository{
      * @return job completed (a CivilizationEntity was add)
      */
     public Completable addCivilizationToFavoriteDatabase(CivilizationEntity civilizationEntity) {
-        /*return civilizationRemoteDataSource.getACivilization(civilizationEntity.getId())
-                .map(new Function<Civilization, CivilizationEntity>() {
-                    @Override
-                    public CivilizationEntity apply(Civilization civilization) {
-                        return civilizationToCivilizationEntityMapper.map(civilization);
-                    }
-                })
-                .flatMapCompletable(new Function<CivilizationEntity, CompletableSource>() {
-                    @Override
-                    public CompletableSource apply(CivilizationEntity civilizationEntity) {
-                        return civilizationLocalDataSource.addCivilizationToFavoriteDatabase(civilizationEntity);
-                    }
-                });*/
         return civilizationLocalDataSource.addCivilizationToFavoriteDatabase(civilizationEntity);
     }
 
