@@ -2,12 +2,6 @@
     <!-- APP -->
     <string name="app_name">LibraryCivilizationAoE2</string>
 
-    <!-- COST -->
-    <string name="cost_food">Cost food</string>
-    <string name="cost_gold">Cost gold</string>
-    <string name="cost_stone">Cost stone</string>
-    <string name="cost_wood">Cost wood</string>
-
     <!-- CIVILIZATION : cardview_list_civilization_layout_home -->
     <string name="civilization_name">Civilization name</string>
     <string name="civilization_expansion">Civilization expansion</string>
@@ -39,5 +33,6 @@
     <string name="add_civilization_to_favorite">Add civilization to favorite</string>
     <string name="delete_civilization_to_favorite">Delete civilization to favorite</string>
     <string name="image_of_unit">image of unit</string>
+    <string name="image_civilization">Image civilization</string>
 
 </resources>
