@@ -31,7 +31,6 @@ public class InfoCivilizationActivity extends AppCompatActivity {
         TextView text_name = findViewById(R.id.text_name);
         TextView text_expansion = findViewById(R.id.text_expansion);
         TextView text_armyType = findViewById(R.id.text_armyType);
-        TextView text_uniqueTech = findViewById(R.id.text_uniqueTech);
         TextView text_teamBonus = findViewById(R.id.text_teamBonus);
         TextView text_civilizationBonus = findViewById(R.id.text_civilizationBonus);
         Button back_to_holdContext = findViewById(R.id.back_to_holdContext);
@@ -44,11 +43,11 @@ public class InfoCivilizationActivity extends AppCompatActivity {
         text_name.setText(civilizationEntity.getName());
         text_expansion.setText(civilizationEntity.getExpansion());
         text_armyType.setText(civilizationEntity.getArmy_type());
-        text_uniqueTech.setText(civilizationEntity.getUnique_tech());
         text_teamBonus.setText(civilizationEntity.getTeam_bonus());
         text_civilizationBonus.setText(civilizationEntity.getCivilization_bonus());
 
         setupUnique_unit();
+        setupUnique_tech();
 
         back_to_holdContext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +58,7 @@ public class InfoCivilizationActivity extends AppCompatActivity {
     }
 
     /**
-     * setup the cardview_unit_in_info_civilization -> representing the unique unit
+     * setup the cardview_unique_unit -> representing the unique unit
      */
     public void setupUnique_unit(){
         ImageView img_unit = findViewById(R.id.img_unit);
@@ -76,7 +75,6 @@ public class InfoCivilizationActivity extends AppCompatActivity {
                     url = u;
                 }
             }
-            System.out.println("URL :"+url);
             if(!url.equals("")){
                 Glide.with(this)
                         .load(url)
@@ -91,6 +89,29 @@ public class InfoCivilizationActivity extends AppCompatActivity {
         }else{
             img_unit.setVisibility(View.INVISIBLE);
             text_name_unit.setText("N.C");
+        }
+    }
+
+    /**
+     * setup the cardview_unique_tech -> representing the unique technology
+     */
+    public void setupUnique_tech(){
+        ImageView img_tech = findViewById(R.id.img_tech);
+        TextView text_name_tech = findViewById(R.id.text_name_tech);
+        String temp = civilizationEntity.getUnique_tech();
+        if(temp!=null){
+            String[] name_unity = temp.split("/");
+            String name = name_unity[name_unity.length-1];
+            Glide.with(this)
+                    .load("https://static.wikia.nocookie.net/ageofempires/images/4/4e/Aoe2de_tech_previews.png/revision/latest?cb=20201014104430")
+                    .centerCrop()
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .into(img_tech);
+            name = name.replaceAll("_"," ");
+            text_name_tech.setText(name);
+        }else{
+            img_tech.setVisibility(View.INVISIBLE);
+            text_name_tech.setText("N.C");
         }
     }
 }
