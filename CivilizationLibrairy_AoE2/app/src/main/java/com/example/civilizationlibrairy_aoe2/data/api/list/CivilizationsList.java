@@ -12,5 +12,9 @@ public class CivilizationsList {
     @SerializedName("civilizations")
     List<Civilization> civilizationList;
 
+    /**
+     * All civilizations
+     * @return : civilizations
+     */
     public List<Civilization> getCivilizationList(){ return civilizationList; }
 }

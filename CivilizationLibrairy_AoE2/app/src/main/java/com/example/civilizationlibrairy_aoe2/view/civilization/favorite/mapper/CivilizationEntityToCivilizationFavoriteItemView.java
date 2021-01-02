@@ -39,6 +39,11 @@ public class CivilizationEntityToCivilizationFavoriteItemView {
         return civilizationFavoriteItemViewModels;
     }
 
+    /**
+     * Map a <code>civilizationFavoriteItemViewModel</code> to a CivilizationEntity
+     * @param civilizationFavoriteItemViewModel : the civilization to transform
+     * @return : a new CivilizationEntity
+     */
     public CivilizationEntity reverseMap(CivilizationFavoriteItemViewModel civilizationFavoriteItemViewModel){
         CivilizationEntity civilizationEntity = new CivilizationEntity();
         civilizationEntity.setUrl_picture(civilizationFavoriteItemViewModel.getImg_civilization());

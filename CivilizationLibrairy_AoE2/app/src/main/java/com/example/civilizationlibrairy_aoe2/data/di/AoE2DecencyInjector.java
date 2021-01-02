@@ -22,12 +22,25 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class AoE2DecencyInjector {
+    /* request */
     private static AoE2Service aoE2Service;
+
+    /* use to make your request */
     private static Retrofit retrofit;
+
+    /* use to transform Json response to Java object */
     private static Gson gson;
+
+    /* use to realize request (on local or to remote information from API) */
     private static CivilizationRepository civilizationRepository;
+
+    /* use to create civilizationRepository */
     private static ProjectDatabase projectDatabase;
+
+    /* application context */
     private static Context applyContext;
+
+    /* use to create the good ViewModel -> Home or Favorite according to your need*/
     private static ViewModelFactory viewModelFactory;
 
     public static ViewModelFactory getViewModelFactory(){

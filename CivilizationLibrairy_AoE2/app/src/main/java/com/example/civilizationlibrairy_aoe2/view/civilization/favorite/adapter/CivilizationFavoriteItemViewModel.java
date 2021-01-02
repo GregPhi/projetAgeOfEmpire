@@ -1,12 +1,9 @@
 package com.example.civilizationlibrairy_aoe2.view.civilization.favorite.adapter;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 /**
  * civilization use to display information on InfoCivilizationActivity when you come from CivilizationFavoriteAdapter
  */
-public class CivilizationFavoriteItemViewModel implements Parcelable {
+public class CivilizationFavoriteItemViewModel {
     private String civilization_id;
     private String img_civilization;
     private String civilization_name;
@@ -19,30 +16,6 @@ public class CivilizationFavoriteItemViewModel implements Parcelable {
 
     public CivilizationFavoriteItemViewModel() {
     }
-
-    protected CivilizationFavoriteItemViewModel(Parcel in) {
-        civilization_id = in.readString();
-        img_civilization = in.readString();
-        civilization_name = in.readString();
-        civilization_expansion = in.readString();
-        civilization_army_type = in.readString();
-        civilization_unique_unit = in.readString();
-        civilization_unique_tech = in.readString();
-        civilization_tem_bonus = in.readString();
-        civilization_bonus = in.readString();
-    }
-
-    public static final Creator<CivilizationFavoriteItemViewModel> CREATOR = new Creator<CivilizationFavoriteItemViewModel>() {
-        @Override
-        public CivilizationFavoriteItemViewModel createFromParcel(Parcel in) {
-            return new CivilizationFavoriteItemViewModel(in);
-        }
-
-        @Override
-        public CivilizationFavoriteItemViewModel[] newArray(int size) {
-            return new CivilizationFavoriteItemViewModel[size];
-        }
-    };
 
     public String getCivilization_army_type() {
         return civilization_army_type;
@@ -114,23 +87,5 @@ public class CivilizationFavoriteItemViewModel implements Parcelable {
 
     public void setCivilization_bonus(String civilization_bonus) {
         this.civilization_bonus = civilization_bonus;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(civilization_id);
-        parcel.writeString(img_civilization);
-        parcel.writeString(civilization_name);
-        parcel.writeString(civilization_expansion);
-        parcel.writeString(civilization_army_type);
-        parcel.writeString(civilization_unique_unit);
-        parcel.writeString(civilization_unique_tech);
-        parcel.writeString(civilization_tem_bonus);
-        parcel.writeString(civilization_bonus);
     }
 }

@@ -15,7 +15,6 @@ import com.example.civilizationlibrairy_aoe2.view.civilization.home_all.adapter.
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -91,11 +90,7 @@ public class CivilizationHomeListAdapter extends RecyclerView.Adapter<Civilizati
             this.info_of_civilization_from_home.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    try {
-                        actionOnHome.displayInformation(civilizationListItemViewModel);
-                    } catch (ExecutionException | InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    actionOnHome.displayInformation(civilizationListItemViewModel);
                 }
             });
             this.add_civilization_to_favorite.setOnClickListener(new View.OnClickListener() {

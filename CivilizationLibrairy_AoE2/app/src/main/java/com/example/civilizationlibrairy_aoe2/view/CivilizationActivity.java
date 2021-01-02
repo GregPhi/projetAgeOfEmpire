@@ -32,9 +32,9 @@ public class CivilizationActivity extends AppCompatActivity {
     /**
      * setup the view pager -> what fragment to display
      */
-    public void setupViewPager(){
+    public void setupViewPager() {
         viewPager = findViewById(R.id.fragments_viewpager);
-        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),getLifecycle());
+        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), getLifecycle());
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout = findViewById(R.id.frag_tab);
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

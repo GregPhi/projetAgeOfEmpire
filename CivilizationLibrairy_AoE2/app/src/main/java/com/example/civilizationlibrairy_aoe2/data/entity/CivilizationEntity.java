@@ -16,21 +16,32 @@ import androidx.room.PrimaryKey;
  */
 @Entity
 public class CivilizationEntity implements Parcelable {
+    /* civilization's id */
     @NonNull
     @PrimaryKey
     private String id;
+    /* civilization's name */
     private String name;
+    /* civilization's expansion in game */
     private String expansion;
+    /* civilization's type of army */
     private String army_type;
+    /* unit only can be created by this civilization */
     private String unique_unit;
+    /* technology only can be created by this civilization */
     private String unique_tech;
+    /* bonus when you have allies */
     private String team_bonus;
+    /* civilizations bonus */
     private String civilization_bonus;
+    /* allows the display of an image (obtained in the url_array.xml file -> url_civilization) */
     private String url_picture;
 
     public CivilizationEntity() {
         id = "";
     }
+
+    /* will allow sending a CivilizationEntity of a fragment to the InfoCivilizationActivity */
 
     protected CivilizationEntity(Parcel in) {
         id = Objects.requireNonNull(in.readString());
@@ -55,6 +66,8 @@ public class CivilizationEntity implements Parcelable {
             return new CivilizationEntity[size];
         }
     };
+
+    /* SETTER AND GETTER */
 
     @NotNull
     public String getId() {
@@ -122,6 +135,8 @@ public class CivilizationEntity implements Parcelable {
     public String getUrl_picture(){ return url_picture; }
 
     public void setUrl_picture(String url_picture){ this.url_picture = url_picture; }
+
+    /* will allow sending a CivilizationEntity of a fragment to the InfoCivilizationActivity */
 
     @Override
     public int describeContents() {

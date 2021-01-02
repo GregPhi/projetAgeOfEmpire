@@ -20,7 +20,6 @@ import com.example.civilizationlibrairy_aoe2.view.viewmodel.FavoriteViewModel;
 import com.example.civilizationlibrairy_aoe2.view.viewmodel.HomeCivilizationsViewModel;
 
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -139,7 +138,7 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
     }
 
     @Override
-    public void displayInformation(CivilizationHomeItemViewModel item) throws ExecutionException, InterruptedException {
+    public void displayInformation(CivilizationHomeItemViewModel item) {
         CivilizationHomeItemViewModelToCivilizationEntity civilizationHomeItemViewModelToCivilizationEntity = new CivilizationHomeItemViewModelToCivilizationEntity();
         CivilizationEntity civilizationEntity = civilizationHomeItemViewModelToCivilizationEntity.map(item);
         Intent intent = new Intent(getActivity(), InfoCivilizationActivity.class);

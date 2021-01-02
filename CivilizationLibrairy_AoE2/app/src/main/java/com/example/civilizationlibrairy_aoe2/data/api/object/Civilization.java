@@ -6,18 +6,29 @@ import java.util.List;
  * object representing civilization retrieved by the API
  */
 public class Civilization {
+    /* civilization's id */
     private int id;
+    /* civilization's name */
     private String name;
+    /* civilization's expansion in game */
     private String expansion;
+    /* civilization's type of army */
     private String army_type;
+    /* unit only can be created by this civilization */
     private List<String> unique_unit;
+    /* technology only can be created by this civilization */
     private List<String> unique_tech;
+    /* bonus when you have allies */
     private String team_bonus;
+    /* civilizations bonus */
     private List<String> civilization_bonus;
+    /* civilization is one of your favorite ? */
     private boolean favorite = false;
 
     public Civilization() {
     }
+
+    /* SETTER AND GETTER */
 
     public int getId() {
         return id;

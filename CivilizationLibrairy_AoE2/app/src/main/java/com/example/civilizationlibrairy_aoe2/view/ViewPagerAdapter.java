@@ -22,14 +22,10 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     @NotNull
     @Override
     public Fragment createFragment(int position) {
-        switch(position){
-            case 0:
-                return FragmentHomeCivilization.getInstance();
-            case 1:
-                return FragmentFavoriteCivilization.getInstance();
-            default:
-                return null;
+        if(position == 1){
+            return FragmentFavoriteCivilization.getInstance();
         }
+        return FragmentHomeCivilization.getInstance();
     }
 
     @Override
