@@ -51,7 +51,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_blason"
-            android:contentDescription="Image civilization" />
+            android:contentDescription="@string/image_civilization" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

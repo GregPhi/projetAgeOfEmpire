@@ -44,7 +44,7 @@
             <TextView
                 android:id="@+id/text1"
                 android:layout_width="151dp"
-                android:layout_height="65dp"
+                android:layout_height="match_parent"
                 android:text="@string/name"
                 android:textAlignment="center" />
 
@@ -63,7 +63,7 @@
             <TextView
                 android:id="@+id/text2"
                 android:layout_width="153dp"
-                android:layout_height="65dp"
+                android:layout_height="match_parent"
                 android:text="@string/expansion"
                 android:textAlignment="center" />
 
@@ -82,7 +82,7 @@
             <TextView
                 android:id="@+id/text3"
                 android:layout_width="153dp"
-                android:layout_height="65dp"
+                android:layout_height="match_parent"
                 android:text="@string/army_type"
                 android:textAlignment="center" />
 
@@ -101,7 +101,7 @@
             <TextView
                 android:id="@+id/text4"
                 android:layout_width="153dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="@string/unique_unit"
                 android:textAlignment="center" />
 
@@ -125,11 +125,12 @@
                 android:text="@string/unique_technology"
                 android:textAlignment="center" />
 
-            <TextView
-                android:id="@+id/text_uniqueTech"
-                android:layout_width="wrap_content"
+            <include
+                layout="@layout/cardview_unique_tech"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/civilization" />
+                android:layout_weight="1" />
+
         </LinearLayout>
 
         <LinearLayout

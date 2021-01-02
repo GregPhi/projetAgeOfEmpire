@@ -10,7 +10,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/img_unit"
+            android:id="@+id/img_tech"
             android:layout_width="82dp"
             android:layout_height="81dp"
             android:contentDescription="@string/image_of_unit"
@@ -19,12 +19,12 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/text_name_unit"
+            android:id="@+id/text_name_tech"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="22dp"
-            android:hint="@string/unique_unit"
-            app:layout_constraintStart_toEndOf="@+id/img_unit"
+            android:hint="@string/unique_technology"
+            app:layout_constraintStart_toEndOf="@+id/img_tech"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
