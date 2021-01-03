@@ -91,9 +91,6 @@ public class CivilizationHomeGrillAdapter extends RecyclerView.Adapter<Civilizat
             this.add_civilization_to_favorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(civilizationHomeItemViewModel.isFavorite()){
-                        return;
-                    }
                     actionOnHome.onFavorite(civilizationHomeItemViewModel);
                 }
             });

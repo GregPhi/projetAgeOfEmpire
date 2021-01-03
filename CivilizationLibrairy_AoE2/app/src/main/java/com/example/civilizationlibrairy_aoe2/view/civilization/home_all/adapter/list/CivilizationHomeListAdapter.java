@@ -96,9 +96,6 @@ public class CivilizationHomeListAdapter extends RecyclerView.Adapter<Civilizati
             this.add_civilization_to_favorite.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(civilizationListItemViewModel.isFavorite()){
-                        return;
-                    }
                     actionOnHome.onFavorite(civilizationListItemViewModel);
                 }
             });
