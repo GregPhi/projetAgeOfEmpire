@@ -92,11 +92,10 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
     /**
      * displays civilizations as a list
      */
-    private void getAllCivilizationsOnViewList() {
+    public void getAllCivilizationsOnViewList() {
         civilizationsViewModel = new ViewModelProvider(requireActivity(), AoE2DecencyInjector.getViewModelFactory()).get(HomeCivilizationsViewModel.class);
         favoriteViewModel = new ViewModelProvider(requireActivity(), AoE2DecencyInjector.getViewModelFactory()).get(FavoriteViewModel.class);
-        civilizationsViewModel.getAllCivilizations();
-        civilizationsViewModel.getCivilizations().observe(getViewLifecycleOwner(), new Observer<List<CivilizationHomeItemViewModel>>() {
+        civilizationsViewModel.getAllCivilizations().observe(getViewLifecycleOwner(), new Observer<List<CivilizationHomeItemViewModel>>() {
             @Override
             public void onChanged(List<CivilizationHomeItemViewModel> civilizationHomeItemViewModels) {
                 civilizationHomeListAdapter.setListItemViewModels(civilizationHomeItemViewModels);
@@ -118,10 +117,9 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
     /**
      * displays civilizations as a grid
      */
-    private void getAllCivilizationsOnViewGrid() {
+    public void getAllCivilizationsOnViewGrid() {
         civilizationsViewModel = new ViewModelProvider(requireActivity(), AoE2DecencyInjector.getViewModelFactory()).get(HomeCivilizationsViewModel.class);
-        civilizationsViewModel.getAllCivilizations();
-        civilizationsViewModel.getCivilizations().observe(getViewLifecycleOwner(), new Observer<List<CivilizationHomeItemViewModel>>() {
+        civilizationsViewModel.getAllCivilizations().observe(getViewLifecycleOwner(), new Observer<List<CivilizationHomeItemViewModel>>() {
             @Override
             public void onChanged(List<CivilizationHomeItemViewModel> civilizationHomeItemViewModels) {
                 civilizationHomeGrillAdapter.setListItemViewModels(civilizationHomeItemViewModels);

@@ -34,17 +34,10 @@ public class HomeCivilizationsViewModel extends ViewModel {
     // --> Get all civilizations
 
     /**
-     * Get all civilizations retrieve
+     * Remote all civilizations
      * @return : all civilizations
      */
-    public MutableLiveData<List<CivilizationHomeItemViewModel>> getCivilizations() {
-        return civilizations;
-    }
-
-    /**
-     * Remote all civilizations
-     */
-    public void getAllCivilizations(){
+    public MutableLiveData<List<CivilizationHomeItemViewModel>> getAllCivilizations(){
         isDataLoad.postValue(true);
         compositeDisposable.clear();
         compositeDisposable.add(civilizationRepository.getAllCivilizations()
@@ -62,23 +55,17 @@ public class HomeCivilizationsViewModel extends ViewModel {
                         e.printStackTrace();
                     }
                 }));
+        return civilizations;
     }
 
     // --> Get a specific civilization
 
     /**
-     * Get a specific civilization retrieve
-     * @return : specific civilization
-     */
-    public MutableLiveData<CivilizationHomeItemViewModel> getASpecificCivilization() {
-        return civilizationA;
-    }
-
-    /**
      * Remote a specific civilization on using <code>id</code>
      * @param id : specific civilization's id
+     * @return : specific civilization
      */
-    public void getACivilization(String id){
+    public MutableLiveData<CivilizationHomeItemViewModel> getACivilization(String id){
         isDataLoad.postValue(true);
         compositeDisposable.clear();
         compositeDisposable.add(civilizationRepository.getACivilization(id)
@@ -95,5 +82,6 @@ public class HomeCivilizationsViewModel extends ViewModel {
                         isDataLoad.setValue(false);
                     }
                 }));
+        return civilizationA;
     }
 }
