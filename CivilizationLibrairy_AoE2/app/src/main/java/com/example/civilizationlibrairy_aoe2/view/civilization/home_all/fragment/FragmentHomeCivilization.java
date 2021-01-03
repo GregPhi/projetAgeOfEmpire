@@ -1,10 +1,12 @@
 package com.example.civilizationlibrairy_aoe2.view.civilization.home_all.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 
 import com.example.civilizationlibrairy_aoe2.R;
@@ -35,7 +37,6 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
     private View rootView;
     private HomeCivilizationsViewModel civilizationsViewModel;
     private FavoriteViewModel favoriteViewModel;
-    private boolean layoutManagerList;
     private CivilizationHomeListAdapter civilizationHomeListAdapter;
     private CivilizationHomeGrillAdapter civilizationHomeGrillAdapter;
 
@@ -54,45 +55,36 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        layoutManagerList = true;
-        initializationOfRecyclerView_HomeListAdapter();
+        initializationOfRecyclerView_HomeListAdapter_AND_displayAllCivilization();
         setupSwitch_List_Grill();
     }
 
     /**
      * setup the switch list to grid and vice versa
      */
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     public void setupSwitch_List_Grill(){
         Switch switch_list_to_grille = rootView.findViewById(R.id.switch_list_to_grille);
-        switch_list_to_grille.setOnClickListener(new View.OnClickListener() {
+        switch_list_to_grille.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                if(layoutManagerList) {
-                    initializationOfRecyclerView_HomeGrillAdapter();
-                    layoutManagerList = false;
-                } else {
-                    initializationOfRecyclerView_HomeListAdapter();
-                    layoutManagerList = true;
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    initializationOfRecyclerView_HomeGrillAdapter_AND_displayAllCivilization();
+                }else{
+                    initializationOfRecyclerView_HomeListAdapter_AND_displayAllCivilization();
                 }
             }
         });
     }
 
     /**
-     * initialize the recyclerview who contains the HomeListAdapter
+     * initialize the recyclerview who contains the HomeListAdapter & displays civilizations as a list
      */
-    public void initializationOfRecyclerView_HomeListAdapter() {
+    public void initializationOfRecyclerView_HomeListAdapter_AND_displayAllCivilization() {
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view_home);
         civilizationHomeListAdapter = new CivilizationHomeListAdapter(this);
         recyclerView.setAdapter(civilizationHomeListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        getAllCivilizationsOnViewList();
-    }
-
-    /**
-     * displays civilizations as a list
-     */
-    public void getAllCivilizationsOnViewList() {
         civilizationsViewModel = new ViewModelProvider(requireActivity(), AoE2DecencyInjector.getViewModelFactory()).get(HomeCivilizationsViewModel.class);
         favoriteViewModel = new ViewModelProvider(requireActivity(), AoE2DecencyInjector.getViewModelFactory()).get(FavoriteViewModel.class);
         civilizationsViewModel.getAllCivilizations().observe(getViewLifecycleOwner(), new Observer<List<CivilizationHomeItemViewModel>>() {
@@ -104,20 +96,13 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
     }
 
     /**
-     * initialize the recyclerview who contains the HomeGrillAdapter
+     * initialize the recyclerview who contains the HomeGrillAdapter & displays civilizations as a grid
      */
-    public void initializationOfRecyclerView_HomeGrillAdapter() {
+    public void initializationOfRecyclerView_HomeGrillAdapter_AND_displayAllCivilization() {
         RecyclerView recyclerView = rootView.findViewById(R.id.recycler_view_home);
         civilizationHomeGrillAdapter = new CivilizationHomeGrillAdapter(this);
         recyclerView.setAdapter(civilizationHomeGrillAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 3));
-        getAllCivilizationsOnViewGrid();
-    }
-
-    /**
-     * displays civilizations as a grid
-     */
-    public void getAllCivilizationsOnViewGrid() {
         civilizationsViewModel = new ViewModelProvider(requireActivity(), AoE2DecencyInjector.getViewModelFactory()).get(HomeCivilizationsViewModel.class);
         civilizationsViewModel.getAllCivilizations().observe(getViewLifecycleOwner(), new Observer<List<CivilizationHomeItemViewModel>>() {
             @Override
@@ -125,7 +110,6 @@ public class FragmentHomeCivilization extends Fragment implements ActionOnHome {
                 civilizationHomeGrillAdapter.setListItemViewModels(civilizationHomeItemViewModels);
             }
         });
-
     }
 
     @Override
