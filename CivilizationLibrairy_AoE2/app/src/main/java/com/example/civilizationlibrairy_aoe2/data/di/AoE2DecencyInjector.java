@@ -1,5 +1,6 @@
 package com.example.civilizationlibrairy_aoe2.data.di;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 
 import com.example.civilizationlibrairy_aoe2.R;
@@ -38,6 +39,7 @@ public class AoE2DecencyInjector {
     private static ProjectDatabase projectDatabase;
 
     /* application context */
+    @SuppressLint("StaticFieldLeak")
     private static Context applyContext;
 
     /* use to create the good ViewModel -> Home or Favorite according to your need*/
